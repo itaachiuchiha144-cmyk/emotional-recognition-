@@ -30,12 +30,14 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					hover: 'hsl(var(--primary-hover))'
+					hover: 'hsl(var(--primary-hover))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))',
-					hover: 'hsl(var(--secondary-hover))'
+					hover: 'hsl(var(--secondary-hover))',
+					glow: 'hsl(var(--secondary-glow))'
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
@@ -71,11 +73,19 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)'
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-neon': 'var(--gradient-neon)'
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
+				'neon-blue': 'var(--shadow-neon-blue)',
+				'neon-green': 'var(--shadow-neon-green)'
+			},
+			dropShadow: {
+				'neon': '0 0 20px hsl(var(--primary) / 0.5)',
+				'glow': '0 0 10px hsl(var(--primary) / 0.3)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

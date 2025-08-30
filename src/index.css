@@ -2,117 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AI Food Recommendation App Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Voice Emotion Recognition App Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    /* Brand Colors - AI Food App Theme */
-    --background: 210 14% 97.6%; /* #F9FAFB */
-    --foreground: 217 33% 17%; /* #111827 */
+    /* Voice AI Dark Theme */
+    --background: 222 84% 5%; /* #0f172a */
+    --foreground: 210 40% 98%; /* Light text on dark bg */
 
-    --card: 0 0% 100%;
-    --card-foreground: 217 33% 17%;
+    --card: 222 84% 7%; /* Slightly lighter than background */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 217 33% 17%;
+    --popover: 222 84% 7%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Deep Blue Primary */
-    --primary: 221 83% 30.2%; /* #1E3A8A */
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 221 83% 25%;
+    /* Electric Blue Primary (Neon accent) */
+    --primary: 214 100% 59%; /* #3b82f6 */
+    --primary-foreground: 222 84% 5%;
+    --primary-hover: 214 100% 54%;
+    --primary-glow: 214 100% 70%;
 
-    /* Teal Secondary */
-    --secondary: 173 58% 39.2%; /* #14B8A6 */
-    --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 173 58% 34%;
+    /* Green Accent */
+    --secondary: 142 76% 54%; /* #22c55e */
+    --secondary-foreground: 222 84% 5%;
+    --secondary-hover: 142 76% 49%;
+    --secondary-glow: 142 76% 64%;
 
-    /* Coral Accent */
-    --accent: 4 86% 73.1%; /* #F87171 */
-    --accent-foreground: 0 0% 100%;
-    --accent-hover: 4 86% 68%;
+    /* Muted colors for dark theme */
+    --muted: 215 28% 17%; /* Dark muted */
+    --muted-foreground: 217 32% 60%; /* Light muted text */
 
-    --muted: 214 32% 91.4%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 214 100% 59%; /* Same as primary */
+    --accent-foreground: 222 84% 5%;
+    --accent-hover: 214 100% 54%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 76% 60%; /* Red for errors */
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 30.2%;
+    --border: 215 28% 17%; /* Dark borders */
+    --input: 215 28% 17%; /* Dark inputs */
+    --ring: 214 100% 59%; /* Blue focus ring */
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    /* Neon Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 14% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(215 28% 12%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(var(--primary) / 0.2) 0%, hsl(var(--secondary) / 0.2) 100%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --shadow-card: 0 4px 20px -4px rgb(0 0 0 / 0.15);
+    /* Enhanced Shadows with Neon Glow */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+    --shadow-card: 0 8px 32px -8px rgb(0 0 0 / 0.4);
+    --shadow-neon-blue: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-neon-green: 0 0 30px hsl(var(--secondary) / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --transition-glow: box-shadow 0.3s ease-in-out;
   }
 }
 
@@ -127,33 +80,44 @@
 }
 
 @layer components {
-  /* Hero Button Styles */
-  .btn-hero {
-    @apply bg-gradient-to-r from-primary to-secondary text-white font-medium px-8 py-4 rounded-xl;
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
-    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  /* Neon Button Styles */
+  .btn-neon {
+    @apply bg-gradient-to-r from-primary to-secondary text-foreground font-semibold px-8 py-4 rounded-xl;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-neon-blue;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+    @apply border border-primary/20;
   }
 
-  /* Food Card Styles */
-  .food-card {
-    @apply bg-white rounded-2xl p-6 transition-all duration-300;
-    @apply hover:transform hover:-translate-y-2 hover:shadow-2xl;
-    @apply border border-gray-100;
+  /* Neon Card Styles */
+  .neon-card {
+    @apply bg-card rounded-2xl p-6 transition-all duration-300;
+    @apply hover:transform hover:-translate-y-1 hover:shadow-neon-blue;
+    @apply border border-primary/20 backdrop-blur-sm;
+    @apply shadow-card;
   }
 
-  /* Filter Sidebar Styles */
-  .filter-sidebar {
-    @apply bg-white border-r border-gray-100 p-6;
-    @apply shadow-sm;
+  /* Upload Card Styles */
+  .upload-card {
+    @apply bg-gradient-neon rounded-2xl p-8 transition-all duration-300;
+    @apply border-2 border-dashed border-primary/30 hover:border-primary/50;
+    @apply hover:shadow-neon-blue;
   }
 
   /* Navigation Styles */
   .nav-link {
     @apply text-foreground/80 hover:text-primary transition-colors duration-200;
-    @apply font-medium;
+    @apply font-medium hover:drop-shadow-[0_0_10px_hsl(var(--primary)/0.5)];
   }
 
-  .nav-link-active {
-    @apply text-primary font-semibold;
+  /* Progress Bar Styles */
+  .progress-glow {
+    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply drop-shadow-[0_0_8px_hsl(var(--primary)/0.6)];
+  }
+
+  /* Loading Animation */
+  .pulse-neon {
+    @apply animate-pulse;
+    filter: drop-shadow(0 0 10px hsl(var(--primary)));
   }
 }
